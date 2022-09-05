@@ -1,0 +1,10 @@
+version: '2.1'
+services:
+  pytorchCNN:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: us.icr.io/cv-studio-access/pytorch-cnn:latest
+    working_dir: /app
+    ports:
+      - "8080:8080"

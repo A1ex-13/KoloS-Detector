@@ -1,0 +1,66 @@
+<!doctype html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+<html>
+  <div class="container pt-4">
+    <div class="row" style="display: flex;flex-direction: column;align-items: center;">
+      <div class="col-sm-12 text-center text-white" class="instructions" style="max-width: 55%;">
+       <h1>{{project_name}}</h1>
+      <h5>{{project_description}}</h5>
+      </div>
+    </div>
+    <div class="spacer10"></div>
+    <div class="row">
+      <div class="col-sm-12 text-center text-white" class="instructions">
+        <h4 class="pt-3">Drag & Drop an Image Here</h4>
+        <h6>Please only drag and drop one image at a time.</h6>
+      </div>
+    </div>
+    <div class="spacer10"></div>
+    <div class="row">
+      <div class="col-sm-12" style="text-align:center;">
+        <form id="dragDropForm" method="POST" action="" enctype="multipart/form-data" onsubmit="return false;">
+          <div class="dropImageZone">
+            {% if flag %}
+            <img id="dropImageZoneImg" src="data:image/PNG;base64,{{img}}"/>
+            {% else %}
+            <div class="dropImageChild text-white dropText">
+              <h4>Drag & Drop Here</h4>
+              <h6>or</h6>
+              <h6>Click anywhere to upload an image</h6>
+            </div>
+            <img id="dropImageZoneImg" class="hideImage" src=" "/>
+            {% endif %}
+            <input type="file" name="files" id="filePhoto" class="filePhoto" onchange="showDiv()"/>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="spacer10"></div>
+    <div class="row">
+      <div class="col-sm-12" style="text-align:center;">
+        {% if flag %}
+          <div class="alert alert-primary text-center" role="alert">
+            <strong>{{predicted}}</strong>
+          </div>
+          {% endif %}
+        <div class="hidden" id="loader">
+          <div class="spinner-grow text-primary spinner-grow-sm" role="status">
+          </div>
+          <div class="spinner-grow text-primary spinner-grow-sm" role="status">
+          </div>
+          <div class="spinner-grow text-primary spinner-grow-sm" role="status">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="spacer10"></div>
+    <div class="row">
+      <div class="col-sm-12" style="text-align:center;">
+        <a class="btn btn-primary" href="/" role="button">Try Again</a>
+      </div>
+    </div>
+  </div>
+</html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='scripts/index.js')}}"></script>

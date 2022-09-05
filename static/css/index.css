@@ -1,0 +1,94 @@
+body {
+    background-color: #000;
+}
+
+.spacer10 {
+    height: 10px;
+}
+
+.instructions {
+    text-align:center;
+    
+}
+
+.text-white {
+    color: #00ff00!important;
+}
+
+.dropImageZone {
+    position:relative;
+    overflow:hidden; 
+    
+    width:400px; 
+    height:400px; 
+    background:#000; 
+    border:6px dashed #dc3545;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropImageChild{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.filePhoto{
+    position:absolute;
+    display: block;
+    width: 400px;
+    height: 400px;
+}
+
+.dropImageZone img{
+    position:absolute;
+    display: block;
+    width: 400px;
+    height: 400px;
+}
+
+.hideImage{
+    opacity: 0.0;
+}
+
+.dropText {
+    position:absolute;
+    line-height: 300px;
+    text-align: center;
+}
+
+.dropImageZone.dragover {
+    border-color:#428bca;
+    color:#000;
+}
+
+.dropText.dragover {
+    display: none;
+}
+
+.btn-primary {
+    color: #000;
+    background-color: #ffc107;
+    border-color: #fd0d0d;
+}
+
+.text-primary {
+    color: #1afd0d!important;
+}
+
+input[type="file"] {
+    left: 0;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.alert {
+    display:inline-block;   
+}
+
+.hidden {
+    display:none;
+}

@@ -18,9 +18,7 @@ After a lot of research
 I came to the conclusion that we need a mobile and always at hand version of the application.
 data(input) -> Google Colab (tensorflow) -> data(output)
 
-#### 🔗 This link is interesting
 
-[more <3 open source love here](https://aihub.cloud.google.com/)
 
 
 🚪 [home](https://a1ex-13.github.io)
